@@ -1,3 +1,3 @@
-# Hospital-Management-Java-DSA
+# Hospital-Management Java DSA
 
 The __"Hospital Management System"__ projectwhich focus on waiting list of medical examination, is designed to streamline hospital operations by managing patient checkups effectively. It employs a priority-based system to ensure that patients requiring urgent care receive immediate attention. This system integrates patient and doctor management with a waiting list module, providing an intuitive interface for hospital staff to input, track, and manage medical appointments. The software enhances operational efficiency, reduces waiting times, and ensures optimal resource allocation in a healthcare setting.
