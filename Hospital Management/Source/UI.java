@@ -52,7 +52,7 @@ public class UI {
         menuPanel.add(menuTitle);
 
         // Load the image using ImageIcon
-        ImageIcon imageIcon = new ImageIcon("../Hospital Management/Hospital Management/doctor.jpg"); 
+        ImageIcon imageIcon = new ImageIcon("../Hospital Management/doctor.jpg"); 
 
         // Scale the image (optional)
         Image image = imageIcon.getImage(); // Get the Image from ImageIcon
@@ -129,14 +129,19 @@ public class UI {
                         checkupManager.addCheckup(checkup);
                     }
 
-                    StringBuilder sb = new StringBuilder("Waiting List:\n");
+                    StringBuilder sb = new StringBuilder("Doctor Name: " + doctor.getName() + "\n");
+                    
                     for (Checkup checkup : checkupManager.getCheckupsByDoctor(doctor)) {
                         sb.append(checkup.getPatient().getId()).append("; ")
                                 .append(checkup.getPatient().getName()).append("; Priority: ")
                                 .append(checkup.getPriority()).append("; Recommendation: ")
                                 .append(checkup.getRecommendation()).append("\n");
                     }
-                    showList(frame, "Waiting List", sb.toString());
+                    showList(frame, "Waiting List" , sb.toString());
+
+                    // Clear the waiting list for the doctor
+                    checkupManager.clearCheckupsForDoctor(doctor);
+                    JOptionPane.showMessageDialog(frame, "Waiting list for Dr. " + doctor.getName() + " done.");
                 });
             }
         }
